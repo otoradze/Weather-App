@@ -65,7 +65,7 @@ export const App: React.FC = () => {
             value={location}
             onKeyDown={handleKeyDown}
             onChange={(event) => setLocation(event.target.value)}
-            className="w-3/4 px-4 py-1 text-lg border border-gray-300 rounded-3xl focus:outline-none"
+            className="w-3/4 px-4 py-1 text-lg border border-gray-300 rounded-3xl focus:outline-none text-gray-400"
           />
           <img
             alt="Icon"

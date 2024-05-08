@@ -1,0 +1,92 @@
+/* .app-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: rgb(203, 209, 211);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  padding: 20px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  width: 400px;
+  height: 450px;
+  border-radius: 40px;
+  background: rgb(31, 146, 217);
+  border: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.temp {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.location {
+  margin-top: 10px;
+  font-size: 28px;
+}
+
+.feels {
+  width: 100px;
+  display: flex;
+}
+
+.humidity {
+  width: 100px;
+  display: flex;
+}
+
+.wind {
+  width: 120px;
+  display: flex;
+}
+
+.visibility {
+  display: flex;
+  width: 100px;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.details {
+  width: 250px;
+  margin-top: 30px;
+}
+
+.details-first {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-last {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */

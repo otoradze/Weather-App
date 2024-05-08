@@ -11,11 +11,11 @@ interface WeatherData {
 
 export const App: React.FC = () => {
   const [data, setData] = useState<WeatherData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [location, setLocation] = useState<string | undefined>("");
   const [time, setTime] = useState(new Date());
 
-  const fetch = (url: string) => {
+  const getData = (url: string) => {
     axios.get<WeatherData>(url).then((res) => {
       setData(res.data);
       setIsLoading(false);
@@ -24,9 +24,9 @@ export const App: React.FC = () => {
 
   const searchLocation = () => {
     setIsLoading(true);
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=
-      ${location}&appid=150f62b265a138bd4842191c9ff14a47`;
-    fetch(url);
+    getData(
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=150f62b265a138bd4842191c9ff14a47`
+    );
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -36,13 +36,12 @@ export const App: React.FC = () => {
   };
 
   useEffect(() => {
-    setIsLoading(true);
     navigator.geolocation.getCurrentPosition((position) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=
-        ${latitude}&lon=${longitude}&appid=150f62b265a138bd4842191c9ff14a47`;
-      fetch(url);
+      getData(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=150f62b265a138bd4842191c9ff14a47`
+      );
     });
 
     const intervalId = setInterval(() => {
@@ -71,7 +70,7 @@ export const App: React.FC = () => {
           <img
             alt="Icon"
             width="40"
-            src={`/assets/icons/search.svg`}
+            src={`/icons/search.svg`}
             className="ml-2 cursor-pointer"
             onClick={searchLocation}
           />
@@ -82,7 +81,7 @@ export const App: React.FC = () => {
             <img
               alt="Icon"
               width="35"
-              src={`/assets/icons/loader.svg`}
+              src={`/icons/loader.svg`}
               className="mr-1"
             />
           </div>
@@ -91,7 +90,7 @@ export const App: React.FC = () => {
             {data?.weather && (
               <img
                 alt="Weather Icon"
-                src={`/assets/icons/${data.weather[0].icon}.png`}
+                src={`/icons/${data.weather[0].icon}.png`}
                 className="w-35 h-35"
               />
             )}
@@ -116,7 +115,7 @@ export const App: React.FC = () => {
                     <img
                       alt="Feels Icon"
                       width="35"
-                      src={`/assets/icons/feels.svg`}
+                      src={`/icons/feels.svg`}
                       className="mr-1"
                     />
                     <div className="flex flex-col">
@@ -130,7 +129,7 @@ export const App: React.FC = () => {
                     <img
                       alt="Humidity Icon"
                       width="35"
-                      src={`/assets/icons/humidity.svg`}
+                      src={`/icons/humidity.svg`}
                       className="mr-1"
                     />
                     <div className="flex flex-col">
@@ -147,7 +146,7 @@ export const App: React.FC = () => {
                     <img
                       alt="Wind Icon"
                       width="35"
-                      src={`/assets/icons/wind.svg`}
+                      src={`/icons/wind.svg`}
                       className="mr-1"
                     />
                     <div className="flex flex-col">
@@ -161,7 +160,7 @@ export const App: React.FC = () => {
                     <img
                       alt="Visibility Icon"
                       width="35"
-                      src={`/assets/icons/visibility.svg`}
+                      src={`/icons/visibility.svg`}
                       className="mr-1"
                     />
                     <div className="flex flex-col">
